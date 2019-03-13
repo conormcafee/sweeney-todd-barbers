@@ -12,7 +12,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Josefin Sans', sans-serif;
         font-weight: 400;
         line-height: 1.6;
-        color: ${COLOR.PRIMARY.MID};
+        color: ${COLOR.PRIMARY.BASE};
         overflow-x: hidden;
     }
 
@@ -22,14 +22,14 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     p {
-        max-width: 600px;
+        max-width: 386px;
     }
 
     h1, h2, h3, h4 {
         font-family: 'Josefin Sans', sans-serif;
         font-weight: 600;
         margin-top: 16px;
-        margin-bottom: 16px;
+        margin-bottom: 40px;
         position: relative;
 
         &:after {
@@ -37,8 +37,8 @@ export const GlobalStyle = createGlobalStyle`
             position: absolute;
             height: 5px;
             width: 100px;
-            bottom: -5px;
-            left: 0;
+            bottom: -20px;
+            left: -20px;
             background-color: ${COLOR.BRAND.BASE};
         }
     }

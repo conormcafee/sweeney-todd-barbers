@@ -33,10 +33,19 @@ const Wrapper = styled(Flex)`
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background-color: rgba(0, 0, 0, 1);
 		background-image: url(${Texture});
 		background-size: 466 px 349px;
-		opacity: 0.6;
+	}
+
+	&:after {
+		content: "";
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgb(0,0,0);
+		background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,1) 100%);
 	}
 `
 
