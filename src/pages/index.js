@@ -16,7 +16,7 @@ const About = styled(Flex)`
 `
 
 const ImageWrapper = styled.div`
-	background: rgba(255, 255, 255, 0.075);
+	background: rgba(250, 220, 170, 0.1);
 	padding: 32px;
 	border-radius: 20px;
 	transform: translate(75px, -25px) rotate(45deg);
