@@ -8,6 +8,8 @@ import Hero from "../components/Hero"
 import BackgroundColor from "../components/BackgroundColor";
 import PriceList from "../components/PriceList"
 
+import Barbers from "../images/sweeney-barbers.jpg";
+
 const About = styled(Flex)`
 	position: relative;
 	z-index: 1;
@@ -27,6 +29,7 @@ const AboutImage = styled.img`
 	border-radius: 10px;
 	box-shadow: -5px 7px 7px 2px rgba(0,0,0,0.4);
 	transform: rotate(-45deg);
+	filter: grayscale(100%);
 `
 
 const Index = () => (
@@ -54,11 +57,11 @@ const Index = () => (
 
 				<Box width={[1, 1/2]} px={[3, 4]}>
 					<ImageWrapper>
-						<AboutImage src="https://placehold.it/400x400/FAB645/FAB645" alt="Susan" />
+						<AboutImage src={Barbers} alt="Susan & Ruth, Sweeney Barbers" />
 					</ImageWrapper>
 				</Box>
 			</About>
-			
+
 			<PriceList />
 		</BackgroundColor>
 	</Layout>

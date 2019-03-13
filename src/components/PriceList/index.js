@@ -6,44 +6,49 @@ import List from "../List";
 import Icon from "../../images/barber-shop.svg"
 import Clock from "../../images/clock.svg"
 
-const PriceListComponent = () => (
-    <Flex 
-        as="section" 
-        flexWrap={['wrap', 'wrap', 'nowrap']}
-        justifyContent="space-between"
-        css={{ maxWidth: '900px'}} 
-        mx="auto" 
-        pb={[5, 6]}>
-        
-        <Box 
-            order={[2, 2, 1]}
-            width={[1, 1, 1/2]} 
-            px={[3, 4]}>
-            
-            <List 
-                data={PRICE_LIST} 
-                icon={Icon}
-            />
-            
-        </Box>
+class PriceListComponent extends React.Component {
 
-        <Box 
-            order={[1, 1, 2]}
-            width={[1, 1, 1/2]} 
-            px={[3, 4]}>
-            <h2>Price Lists & Opening Hours</h2>
+    render() {
+        return (
+            <Flex 
+                as="section" 
+                flexWrap={['wrap', 'wrap', 'nowrap']}
+                justifyContent="space-between"
+                css={{ maxWidth: '900px'}} 
+                mx="auto" 
+                pb={[5, 6]}>
+                
+                <Box 
+                    order={[2, 2, 1]}
+                    width={[1, 1, 1/2]} 
+                    px={[3, 4]}>
+                    
+                    <List 
+                        data={PRICE_LIST} 
+                        icon={Icon}
+                    />
+                    
+                </Box>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut at felis tortor.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut at felis tortor.</p>
+                <Box 
+                    order={[1, 1, 2]}
+                    width={[1, 1, 1/2]} 
+                    px={[3, 4]}>
+                    <h2>Price Lists & Opening Hours</h2>
 
-            <List 
-                data={OPENING_HOURS} 
-                icon={Clock}
-                mt={4}
-            />
-        </Box>
-    </Flex>
-)
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut at felis tortor.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut at felis tortor.</p>
+
+                    <List 
+                        data={OPENING_HOURS} 
+                        icon={Clock}
+                        mt={4}
+                    />
+                </Box>
+            </Flex>
+        )
+    }
+}
 
 export default PriceListComponent
 

@@ -26,6 +26,7 @@ const Wrapper = styled(Flex)`
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: calc(100vh - 150px);
+	max-height: 1200px;
 
 	&:before {
 		content: "";
