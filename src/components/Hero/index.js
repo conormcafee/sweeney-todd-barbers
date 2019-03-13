@@ -8,7 +8,8 @@ import Salon from "../../images/backgrounds/sweeney-todd-salon.jpg"
 const Hero = () => (
     <Wrapper 
         as="section"
-        p={[3, 4]}
+		p={[3, 4]}
+		alignItems="center"
         justifyContent="center"
         style={{ backgroundImage: `url(${Salon})`}}>
         <Content>
@@ -52,7 +53,6 @@ const Wrapper = styled(Flex)`
 const Content = styled(Box)`
 	position: relative;
 	z-index: 1;
-	transform: translateY(100px);
 `
 
 const Image = styled.img`

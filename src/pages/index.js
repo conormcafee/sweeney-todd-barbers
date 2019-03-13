@@ -58,21 +58,10 @@ const Index = () => (
 					</ImageWrapper>
 				</Box>
 			</About>
-			<PriceList data={PRICE_LIST} />
+			
+			<PriceList />
 		</BackgroundColor>
 	</Layout>
 )
 
 export default Index
-
-const PRICE_LIST = [
-	{ cut: "Dry Cut", 				price: "€15 - €17"},
-	{ cut: "Wash Cut / Blow Dry", 	price: "€17"},
-	{ cut: "Shave All Over",		price: "€12"},
-	{ cut: "Primary", 				price: "-"},
-	{ cut: "School Going", 			price: "€10 - €13.50"},
-	{ cut: "Baby", 					price: "€8"},
-	{ cut: "Beard Trim",			price: "€5 - €8"},
-	{ cut: "Colour & Cut", 			price: "€30 - €35"},
-	{ cut: "Girls", 				price: "€15 - €25"}
-]
