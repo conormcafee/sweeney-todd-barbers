@@ -9,7 +9,8 @@ import {COLOR} from "../../globals"
 const Hero = () => (
     <Wrapper 
         as="section"
-		p={[3, 4]}
+		px={[3, 4]}
+		py={[5, 6]}
 		alignItems="center"
         justifyContent="center"
         style={{ backgroundImage: `url(${Salon})`}}>
@@ -17,8 +18,8 @@ const Hero = () => (
             <Image src={WhiteLogo} alt="Sweeney Todd Barbers" />
 			
 			<Box my={5}>
-				<Button type="button" mr={true}>Call Us</Button>
-				<Button type="button">Find Us</Button>
+				<Button href="tel:+353864040676" mr={true}>Call Us</Button>
+				<Button href="/">Find Us</Button>
 			</Box>
 			
 			<blockquote>
@@ -31,18 +32,19 @@ const Hero = () => (
 
 export default Hero
 
-const Button = styled.button`
+const Button = styled.a`
 	display: inline-block;
 	line-height: 1.3;
-	color: ${COLOR.BRAND.BASE};
-	background: transparent;
+	color: #ffffff;
+	background: ${COLOR.BRAND.BASE};
 	border: 2px solid ${COLOR.BRAND.BASE};
 	padding: 10px 32px;
-	border-radius: 50px;
+	border-radius: 12px;
 	font-weight: 600;
 	text-transform: uppercase;
 	box-shadow: -5px 7px 7px 2px rgba(0,0,0,0.1);
 	margin-right: ${props => props.mr ? `32px` : `0px`};
+	text-decoration: none;
 	transition: background 150ms ease-in, border-color 150ms ease-in, color 150ms ease-in;
 
 	&:hover {
@@ -58,8 +60,7 @@ const Wrapper = styled(Flex)`
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	height: 100vh;
-	max-height: 1200px;
+	border-bottom: 5px solid ${COLOR.PRIMARY.MID};
 
 	&:before {
 		content: "";
@@ -79,8 +80,12 @@ const Wrapper = styled(Flex)`
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgb(0,0,0);
-		background: linear-gradient(180deg, rgba(19,18,18,0.3) 0%, rgba(19,18,18,1) 100%);
+		background: rgb(63,55,51);
+		background: linear-gradient(180deg, rgba(63,55,51,0.7) 0%, rgba(63,55,51,1) 100%);
+	}
+
+	h1 {
+		color: #ffffff;
 	}
 `
 

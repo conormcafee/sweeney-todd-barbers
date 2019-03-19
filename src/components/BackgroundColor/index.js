@@ -11,7 +11,6 @@ export default BackgroundColor
 
 const Background = styled.div`
     position: relative;
-    overflow: hidden;
     background-color: ${props => props.color ? `${props.color}` : `transparent`};
     background-image: ${props => props.texture ? `url(${props.texture})` : `none`};
 `;

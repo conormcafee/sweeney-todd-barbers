@@ -15,14 +15,20 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Josefin Sans', sans-serif;
         font-weight: 400;
         line-height: 1.6;
-        background: ${COLOR.BRAND.BASE};
-        color: ${COLOR.PRIMARY.BASE};
+        /* background: ${COLOR.BRAND.BASE}; */
+        background: ${COLOR.PRIMARY.BASE};
+        color: ${COLOR.PRIMARY.DARK};
         overflow-x: hidden;
     }
 
     ul {
         list-style: none;
         padding-left: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
     }
 
     blockquote {
@@ -57,8 +63,8 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1, h2, h3, h4 {
-        font-family: 'Josefin Sans', sans-serif;
-        font-weight: 600;
+        font-family: 'Rye', cursive;
+        font-weight: 700;
         margin-top: 16px;
         margin-bottom: 16px;
     }
@@ -72,6 +78,7 @@ export const GlobalStyle = createGlobalStyle`
 
     h2 {
         font-size: 30px;
-        line-height: 1.2;
+        line-height: 1.3;
+        color: ${COLOR.PRIMARY.MID};
     }
 `
