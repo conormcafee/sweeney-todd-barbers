@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components'
 import {COLOR} from "./index";
 
+import QuoteStart from "../images/quote-start.svg";
+import QuoteEnd from "../images/quote-end.svg";
+
 export const GlobalStyle = createGlobalStyle`
 
     * {
@@ -21,6 +24,33 @@ export const GlobalStyle = createGlobalStyle`
         padding-left: 0;
     }
 
+    blockquote {
+        position: relative;
+
+        &:before,
+        &:after {
+            content: "";
+            height: 30px;
+            width: 30px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: absolute;
+            opacity: 0.5;
+        }
+
+        &:before {
+            background-image: url(${QuoteStart});
+            top: -5px;
+            left: -40px;
+        }
+
+        &:after {
+            background-image: url(${QuoteEnd});
+            top: -5px;
+            right: -35px;
+        }
+    }
+
     p {
         max-width: 386px;
     }
@@ -30,6 +60,9 @@ export const GlobalStyle = createGlobalStyle`
         font-weight: 600;
         margin-top: 16px;
         margin-bottom: 40px;
+    }
+
+    h2, h3, h4 {
         position: relative;
 
         &:after {
@@ -44,9 +77,10 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h1 {
+        position: relative;
+        z-index: 1
         font-size: 35px;
         line-height: 1.2;
-        max-width: 350px;
     }
 
     h2 {

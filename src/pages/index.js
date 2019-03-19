@@ -41,13 +41,10 @@ const Index = () => (
 				as="section" 
 				flexWrap={['wrap']}
 				justifyContent="space-between"
-				mx="auto" pt={[5]}
+				mx="auto" 
+				pt={[5]}
 				pb={[5, 6]}
 				css={{ maxWidth: `900px`}}>
-
-				<Box as="aside" width={1} px={[3, 4]}>
-					<h1>"The no.1 friendly barbers in Kilkenny"</h1>
-				</Box>
 
 				<Box as="article" width={[1, 1/2]} px={[3, 4]}>
 					<p>Sweeney Todd barbers is a friendly, talented barbers in the heart of Kilkenny town.</p>

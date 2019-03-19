@@ -15,7 +15,16 @@ const Hero = () => (
         style={{ backgroundImage: `url(${Salon})`}}>
         <Content>
             <Image src={WhiteLogo} alt="Sweeney Todd Barbers" />
-			<Button type="button">Call us now</Button>
+			
+			<Box my={5}>
+				<Button type="button" mr={true}>Call Us</Button>
+				<Button type="button">Find Us</Button>
+			</Box>
+			
+			<blockquote>
+				<h1>The no.1 friendly barbers in Kilkenny</h1>
+			</blockquote>
+
         </Content>
     </Wrapper>
 )
@@ -25,19 +34,21 @@ export default Hero
 const Button = styled.button`
 	display: inline-block;
 	line-height: 1.3;
-	background: ${COLOR.BRAND.BASE};
-	border: 2px solid ${COLOR.BRAND.LIGHT};
+	color: ${COLOR.BRAND.BASE};
+	background: transparent;
+	border: 2px solid ${COLOR.BRAND.BASE};
 	padding: 10px 32px;
-	border-radius: 20px;
+	border-radius: 50px;
 	font-weight: 600;
 	text-transform: uppercase;
-	margin-top: 32px;
 	box-shadow: -5px 7px 7px 2px rgba(0,0,0,0.1);
-	transition: background 150ms ease-in, border-color 150ms ease-in;
+	margin-right: ${props => props.mr ? `32px` : `0px`};
+	transition: background 150ms ease-in, border-color 150ms ease-in, color 150ms ease-in;
 
 	&:hover {
 		cursor: pointer;
-		background: ${COLOR.BRAND.LIGHT};
+		background: ${COLOR.BRAND.BASE};
+		color: #ffffff;
 		border: 2px solid ${COLOR.BRAND.BASE};
 	}
 `
@@ -47,7 +58,7 @@ const Wrapper = styled(Flex)`
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	height: calc(100vh - 150px);
+	height: 100vh;
 	max-height: 1200px;
 
 	&:before {
