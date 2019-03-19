@@ -80,7 +80,7 @@ const Wrapper = styled(Flex)`
 		right: 0;
 		bottom: 0;
 		background: rgb(0,0,0);
-		background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,1) 100%);
+		background: linear-gradient(180deg, rgba(19,18,18,0.3) 0%, rgba(19,18,18,1) 100%);
 	}
 `
 

@@ -10,28 +10,6 @@ import PriceList from "../components/PriceList"
 
 import Barbers from "../images/sweeney-barbers.jpg";
 
-const About = styled(Flex)`
-	position: relative;
-	z-index: 1;
-`
-
-const ImageWrapper = styled.div`
-	background: rgba(250, 220, 170, 0.1);
-	padding: 32px;
-	border-radius: 20px;
-	transform: translate(75px, -25px) rotate(45deg);
-`
-
-const AboutImage = styled.img`
-	display: block;
-	width: 100%;
-	height: auto;
-	border-radius: 10px;
-	box-shadow: -5px 7px 7px 2px rgba(0,0,0,0.4);
-	transform: rotate(-45deg);
-	filter: grayscale(100%);
-`
-
 const Index = () => (
 	<Layout>
 		<SEO title="Home" keywords={[`sweeney todd barbers`, `kilkenny`, `ireland`]} />
@@ -65,3 +43,25 @@ const Index = () => (
 )
 
 export default Index
+
+const About = styled(Flex)`
+	position: relative;
+	z-index: 1;
+`
+
+const ImageWrapper = styled.div`
+	background: rgba(250, 182, 69, 0.3);
+	padding: 32px;
+	border-radius: 20px;
+	transform: translate(75px, -25px) rotate(45deg);
+`
+
+const AboutImage = styled.img`
+	display: block;
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	box-shadow: -5px 7px 7px 2px rgba(0,0,0,0.4);
+	transform: rotate(-45deg);
+	filter: grayscale(100%);
+`

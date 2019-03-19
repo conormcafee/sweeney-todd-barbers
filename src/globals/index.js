@@ -3,7 +3,7 @@ export const COLOR = {
         LIGHT: '#B2B2B2',
         BASE: '#ffffff',
         MID: '#3F3F3F',
-        DARK: '#000000'
+        DARK: '#131212'
 
     },
     BRAND: {
