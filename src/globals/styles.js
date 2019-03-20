@@ -54,6 +54,12 @@ export const GlobalStyle = createGlobalStyle`
     h2 {
         font-size: 30px;
         line-height: 1.3;
-        color: ${COLOR.PRIMARY.MID};
+        color: ${COLOR.BRAND.BASE};
+    }
+
+    h3 {
+        font-size: 25px;
+        line-height: 1.3;
+        color: ${COLOR.BRAND.BASE};
     }
 `

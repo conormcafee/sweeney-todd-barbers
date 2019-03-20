@@ -5,15 +5,10 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/Hero"
 import PriceList from "../components/PriceList"
+import Testimonials from "../components/Testimonials"
+import PhotoGallery from "../components/PhotoGallery"
 import {COLOR} from "../globals"
 import Barbers from "../images/sweeney-barbers.jpg";
-
-import IMG01 from "../images/hair/01.jpeg";
-import IMG02 from "../images/hair/02.jpeg";
-import IMG03 from "../images/hair/03.jpeg";
-import IMG04 from "../images/hair/04.jpeg";
-import IMG05 from "../images/hair/05.jpeg";
-import IMG06 from "../images/hair/06.jpeg";
 
 const Index = () => (
 	<Layout>
@@ -47,6 +42,10 @@ const Index = () => (
 
 			<PriceList />
 
+			<Testimonials />
+
+			<PhotoGallery />
+
 			<Flex flexWrap="wrap" pt={5} pb={6} mx="auto">
 				<Box as="article" width={1} px={[3, 4]}>
 					<h2>Opening Hours</h2>
@@ -72,22 +71,7 @@ const Index = () => (
 					</Flex>
 			</Flex>
 
-			<Flex 
-				as="section" 
-				flexWrap={['wrap']}
-				justifyContent="space-between"
-				alignItems="center"
-				mx="auto">
-
-				<Flex flexWrap='wrap' width={[1]}>
-					{IMAGES.map((image, index) => (
-						<Box key={index} width={[1/2, 1/3, 1/4]}>
-							<Image style={{ backgroundImage: `url(${image.image})`}}></Image>
-						</Box>
-					))}
-				</Flex>
-
-			</Flex>
+			
 	</Layout>
 )
 
@@ -117,33 +101,6 @@ const HoursText = styled.span`
 	color: ${props => props.sep ? `${COLOR.PRIMARY.MID}` : `${COLOR.PRIMARY.DARK}`};
 `
 
-const Image = styled.div`
-	height: 250px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center center;
-	border: 1px solid white;
-	position: relative;
-	filter: sepia(75%);
-
-	@media only screen and (min-width: 600px) {
-		height: 350px;
-	}
- 
-	&:after {
-		content: "";
-		position: absolute;
-		top: 0;
-		right: 0;
-		bottom: 0;
-		left: 0;
-		height: 100%;
-		width: 100%;
-		background: rgb(63,55,51);
-		background: linear-gradient(180deg, rgba(153,117,98,0.3) 0%, rgba(63,55,51,0.1) 100%);
-	}
-`
-
 const ImageWrapper = styled.div`
 	background: rgba(250, 182, 69, 0.3);
 	padding: 32px;
@@ -158,8 +115,7 @@ const AboutImage = styled.img`
 	border-radius: 10px;
 	box-shadow: -5px 7px 7px 2px rgba(0,0,0,0.4);
 	transform: rotate(-45deg);
-	/* filter: grayscale(100%); */
-	filter: sepia(75%);
+	filter: grayscale(100%);
 `
 
 const OPENING_HOURS = [
@@ -199,14 +155,3 @@ const OPENING_HOURS = [
 		close: null
 	}
 ]
-
-const IMAGES = [
-	{ image: IMG01 },
-	{ image: IMG02 },
-	{ image: IMG03 },
-	{ image: IMG04 },
-	{ image: IMG05 },
-	{ image: IMG06 },
-	{ image: IMG01 },
-	{ image: IMG02 }
-];
