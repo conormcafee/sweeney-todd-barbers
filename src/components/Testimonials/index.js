@@ -5,6 +5,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css"
 import { Carousel } from 'react-responsive-carousel'
 import { COLOR } from "../../globals";
 
+import "./overide.css";
+
 const Testimonials = () => (
     <Flex py={[5,6]}>
         <Carousel autoplay={true} showThumbs={false} showStatus={false} showArrows={false}>
