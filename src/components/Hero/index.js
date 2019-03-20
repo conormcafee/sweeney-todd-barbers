@@ -1,66 +1,37 @@
 import React from "react"
 import styled from "styled-components"
-import {Flex, Box} from "@rebass/grid"
-import WhiteLogo from "../../images/logo-white.svg"
+import {Flex} from "@rebass/grid"
+import Header from "../header"
 import Texture from "../../images/backgrounds/asfalt-light.png"
 import Salon from "../../images/backgrounds/sweeney-todd-salon.jpg"
 import {COLOR} from "../../globals"
 
 const Hero = () => (
-    <Wrapper 
-        as="section"
-		px={[3, 4]}
-		py={[5, 6]}
-		alignItems="center"
-        justifyContent="center"
-        style={{ backgroundImage: `url(${Salon})`}}>
-        <Content>
-            <Image src={WhiteLogo} alt="Sweeney Todd Barbers" />
-			
-			<Box my={5}>
-				<Button href="tel:+353864040676" mr={true}>Call Us</Button>
-				<Button href="/">Find Us</Button>
-			</Box>
-			
+    <Wrapper style={{ backgroundImage: `url(${Salon})`}}>
+		<Header />
+        <Content
+			as="section"
+			flexDirection="column"
+			alignItems="center"
+			justifyContent="center"
+		>
 			<blockquote>
-				<h1>The no.1 friendly barbers in Kilkenny</h1>
+				<h1><Quote start={true.toString()}>"</Quote>The no.1 friendly barbers in Kilkenny<Quote start={false.toString()}>"</Quote></h1>
 			</blockquote>
 
+			<Button>Call Us</Button>
         </Content>
     </Wrapper>
 )
 
 export default Hero
 
-const Button = styled.a`
-	display: inline-block;
-	line-height: 1.3;
-	color: #ffffff;
-	background: ${COLOR.BRAND.BASE};
-	border: 2px solid ${COLOR.BRAND.BASE};
-	padding: 10px 32px;
-	border-radius: 12px;
-	font-weight: 600;
-	text-transform: uppercase;
-	box-shadow: -5px 7px 7px 2px rgba(0,0,0,0.1);
-	margin-right: ${props => props.mr ? `32px` : `0px`};
-	text-decoration: none;
-	transition: background 150ms ease-in, border-color 150ms ease-in, color 150ms ease-in;
-
-	&:hover {
-		cursor: pointer;
-		background: ${COLOR.BRAND.BASE};
-		color: #ffffff;
-		border: 2px solid ${COLOR.BRAND.BASE};
-	}
-`
-
-const Wrapper = styled(Flex)`
+const Wrapper = styled.div`
 	position: relative;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	border-bottom: 5px solid ${COLOR.PRIMARY.MID};
+	height: 100vh;
 
 	&:before {
 		content: "";
@@ -86,17 +57,46 @@ const Wrapper = styled(Flex)`
 
 	h1 {
 		color: #ffffff;
+		max-width: 550px;
+		font-size: 60px;
+		line-height: 1.4;
 	}
 `
 
-const Content = styled(Box)`
+const Quote = styled.span`
+	color: ${COLOR.BRAND.LIGHT};
+	margin: 0 5px;
+	transform: ${props => props.start === 'true' ? `translate(-5px, -13px)` : `translate(7px, 3px)`};
+    display: inline-block;
+    font-size: 40px;
+`
+
+const Content = styled(Flex)`
 	position: relative;
 	z-index: 1;
 	text-align:center;
+	height: calc(100vh - 240px);
 `
 
-const Image = styled.img`
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+const Button = styled.a`
+	display: inline-block;
+	line-height: 1.3;
+	color: #ffffff;
+	background: ${COLOR.BRAND.BASE};
+	border: 2px solid ${COLOR.BRAND.BASE};
+	padding: 10px 32px;
+	border-radius: 4px;
+	font-weight: 600;
+	text-transform: uppercase;
+	box-shadow: -5px 7px 7px 2px rgba(0,0,0,0.1);
+	margin-right: ${props => props.mr ? `32px` : `0px`};
+	text-decoration: none;
+	transition: background 150ms ease-in, border-color 150ms ease-in, color 150ms ease-in;
+
+	&:hover {
+		cursor: pointer;
+		background: ${COLOR.BRAND.BASE};
+		color: #ffffff;
+		border: 2px solid ${COLOR.BRAND.BASE};
+	}
 `

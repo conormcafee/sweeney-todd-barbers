@@ -18,6 +18,7 @@ import IMG06 from "../images/hair/06.jpeg";
 const Index = () => (
 	<Layout>
 		<SEO title="Home" keywords={[`sweeney todd barbers`, `kilkenny`, `ireland`]} />
+		
 		<Hero />
 		
 			<About 

@@ -1,9 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import {COLOR} from "./index";
 
-import QuoteStart from "../images/quote-start.svg";
-import QuoteEnd from "../images/quote-end.svg";
-
 export const GlobalStyle = createGlobalStyle`
 
     * {
@@ -33,29 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 
     blockquote {
         position: relative;
-
-        &:before,
-        &:after {
-            content: "";
-            height: 30px;
-            width: 30px;
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: absolute;
-            opacity: 0.5;
-        }
-
-        &:before {
-            background-image: url(${QuoteStart});
-            top: -5px;
-            left: -40px;
-        }
-
-        &:after {
-            background-image: url(${QuoteEnd});
-            top: -5px;
-            right: -35px;
-        }
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
     }
 
     p {
