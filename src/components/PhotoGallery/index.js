@@ -10,7 +10,7 @@ import IMG05 from "../../images/hair/05.jpeg"
 import IMG06 from "../../images/hair/06.jpeg"
 
 const PhotoGallery = () => (
-    <Flex 
+    <Wrapper 
         as="section" 
         flexWrap={['wrap']}
         justifyContent="space-between"
@@ -25,10 +25,14 @@ const PhotoGallery = () => (
             ))}
         </Flex>
 
-    </Flex>
+    </Wrapper>
 )
 
 export default PhotoGallery
+
+const Wrapper = styled(Flex)`
+	overflow: hidden;
+`
 
 const Image = styled.div`
 	height: 250px;

@@ -12,7 +12,6 @@ export const GlobalStyle = createGlobalStyle`
         font-family: 'Josefin Sans', sans-serif;
         font-weight: 400;
         line-height: 1.6;
-        /* background: ${COLOR.BRAND.BASE}; */
         background: ${COLOR.PRIMARY.BASE};
         color: ${COLOR.PRIMARY.DARK};
         overflow-x: hidden;
@@ -52,14 +51,22 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     h2 {
-        font-size: 30px;
-        line-height: 1.3;
-        color: ${COLOR.BRAND.BASE};
-    }
-
-    h3 {
         font-size: 25px;
         line-height: 1.3;
         color: ${COLOR.BRAND.BASE};
+
+        @media only screen and (min-width: 768px) {
+            font-size: 30px;
+        }
+    }
+
+    h3 {
+        font-size: 20px;
+        line-height: 1.3;
+        color: ${COLOR.BRAND.BASE};
+
+        @media only screen and (min-width: 768px) {
+            font-size: 25px;
+        }
     }
 `

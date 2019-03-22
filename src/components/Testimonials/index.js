@@ -8,7 +8,7 @@ import { COLOR } from "../../globals";
 import "./overide.css";
 
 const Testimonials = () => (
-    <Flex py={[5,6]}>
+    <Wrapper py={[5,6]}>
         <Carousel autoplay={true} showThumbs={false} showStatus={false} showArrows={false}>
             {TESTIMONIALS.map((item, index) => (
                 <Flex 
@@ -16,6 +16,7 @@ const Testimonials = () => (
                     flexWrap={['wrap', 'nowrap']}
                     mx="auto" 
                     css={{ maxWidth: '900px' }}>
+                    
                     <TitleBox width={[1, 1/2]} p={[3,4]}>
                         <SubTitle>Testimonials</SubTitle>
                         <Title>{item.title}</Title>
@@ -28,10 +29,14 @@ const Testimonials = () => (
                 </Flex>
             ))}
         </Carousel>
-    </Flex>
+    </Wrapper>
 )
 
 export default Testimonials
+
+const Wrapper = styled(Flex)`
+    overflow: hidden;
+`
 
 const SubTitle = styled.span`
     font-size: 12px;
@@ -41,13 +46,23 @@ const SubTitle = styled.span`
 `
 
 const TitleBox = styled(Box)`
-    text-align: right;
+    text-align: left; 
+    @media only screen and (min-width: 850px) {
+        text-align: right;
+    }
 `
 
 const Title = styled.h2`
     margin-top: 0;
     max-width: 250px;
-    margin-left: auto;
+
+    @media only screen and (max-width: 849px) {
+        margin-right: auto;
+    }
+    
+    @media only screen and (min-width: 850px) {
+        margin-left: auto;
+    }
 `
 
 const TextBox = styled(Box)`

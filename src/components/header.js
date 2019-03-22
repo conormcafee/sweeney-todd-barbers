@@ -7,19 +7,21 @@ import WhiteLogo from "../images/logo-white.svg"
 const _Header = () => (
 	<Header 
 		as="header"
-		justifyContent="space-between" 
+		flexWrap={['wrap', 'wrap', 'nowrap']}
+		justifyContent={['center', 'space-between', 'space-between']}
 		alignItems="center"
 		mx="auto"
-		pt={4}
+		pt={[3, 4]}
 		px={[3, 4]}
-		css={{ maxWidth: '1200px' }}
+		css={{ maxWidth: '1400px' }}
 	>
 		<Logo src={WhiteLogo} alt="Sweeney Todd Barbers, Kilkenny" />
-		<nav>
+		
+		<Nav>
 			{data.map((item, index) => (
 				<Link button={item.button} key={index}>{item.title}</Link>
 			))}
-		</nav>
+		</Nav>
 	</Header>
 )
 
@@ -31,16 +33,30 @@ const Header = styled(Flex)`
 `
 
 const Logo = styled.img`
-	max-width: 150px;
+	display: block;
+	max-width: 100px;
 	height: auto;
+
+	@media only screen and (min-width: 850px) {
+		max-width: 150px;
+	}
+`
+
+const Nav = styled.nav`
+	text-align: center;
+	margin-top: 16px;
+
+	@media only screen and (min-width: 658px) {
+		max-width: 100%;
+	}
 `
 
 const Link = styled.span`
 	color: #ffffff;
-	font-size: 18px;
+	font-size: 12px;
 	border: 2px solid ${props => props.button ? `#ffffff` : `transparent`};
 	border-radius: 4px;
-	padding: ${props => props.button ? `8px 16px` : `0`};
+	padding: ${props => props.button ? `4px 8px` : `0`};
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 	text-transform: uppercase;
 	
@@ -51,6 +67,11 @@ const Link = styled.span`
 	&:hover {
 		cursor: pointer;
 		color: ${COLOR.BRAND.BASE}
+	}
+
+	@media only screen and (min-width: 850px) {
+		font-size: 18px;
+		padding: ${props => props.button ? `8px 16px` : `0`};
 	}
 `
 

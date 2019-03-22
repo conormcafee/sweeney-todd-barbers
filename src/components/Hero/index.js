@@ -58,17 +58,26 @@ const Wrapper = styled.div`
 	h1 {
 		color: #ffffff;
 		max-width: 550px;
-		font-size: 60px;
+		font-size: 30px;
 		line-height: 1.4;
+
+		@media only screen and (min-width: 768px) {
+			font-size: 60px;
+		}
 	}
 `
 
 const Quote = styled.span`
 	color: ${COLOR.BRAND.LIGHT};
 	margin: 0 5px;
-	transform: ${props => props.start === 'true' ? `translate(-5px, -13px)` : `translate(7px, 3px)`};
+	transform: ${props => props.start === 'true' ? `translate(0px, -7px)` : `translate(0px, -5px)`};
     display: inline-block;
-    font-size: 40px;
+    font-size: 20px;
+
+	@media only screen and (min-width: 768px) {
+		transform: ${props => props.start === 'true' ? `translate(-5px, -13px)` : `translate(7px, 3px)`};
+		font-size: 40px;
+	}
 `
 
 const Content = styled(Flex)`
@@ -84,7 +93,7 @@ const Button = styled.a`
 	color: #ffffff;
 	background: ${COLOR.BRAND.BASE};
 	border: 2px solid ${COLOR.BRAND.BASE};
-	padding: 10px 32px;
+	padding: 6px 16px;
 	border-radius: 4px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -98,5 +107,9 @@ const Button = styled.a`
 		background: ${COLOR.BRAND.BASE};
 		color: #ffffff;
 		border: 2px solid ${COLOR.BRAND.BASE};
+	}
+
+	@media only screen and (min-width: 768px) {
+		padding: 10px 32px;
 	}
 `

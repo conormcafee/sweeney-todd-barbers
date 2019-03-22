@@ -20,23 +20,47 @@ class OpeningHours extends React.Component {
                         </Box>
                     </Flex>
                     
-                    <Hours as="ul" p={[3, 4]} width={1} css={{ maxWidth: '1200px'}} mx="auto" mt={5}>
+                    <Hours 
+                        as="ul" 
+                        flexWrap={['wrap', 'wrap', 'nowrap']}
+                        p={[3, 4]} 
+                        width={1} 
+                        mx="auto" 
+                        mt={[3, 5]}
+                        css={{ maxWidth: '1200px'}}>
+                        
                         {OPENING_HOURS.map((item, index) => (
-                            <Day as="li" width={1/7} px={[3, 4]} key={index}>
-                                <HoursText>{item.title}</HoursText>
+                            <Day 
+                                as="li"
+                                flexDirection={['row', 'row', 'column']}
+                                justifyContent={['space-between', 'space-between']}
+                                alignItems={['center', 'center']}
+                                width={[1, 1, 1/7]} 
+                                pb={[3, 3, 0]}
+                                px={[3, 4]} 
+                                mb={[3, 3, 0]}
+                                key={index}>
+                                
+                                <HoursText header>{item.title}</HoursText>
                                 {item.open !== null && item.close !== null 
                                 ?
-                                    <React.Fragment>
-                                        <HoursText sep={true}>Open</HoursText>
-                                        <HoursText>{item.open}</HoursText>
-                                        <HoursText sep={true}>Close</HoursText>
-                                        <HoursText>{item.close}</HoursText>
-                                    </React.Fragment>
+                                    <Flex flex="1 1 auto" justifyContent="flex-end">
+                                        <Box>
+                                            <HoursText sep={true}>Open</HoursText>
+                                            <HoursText>{item.open}</HoursText>
+                                        </Box>
+                                        <Box ml={4}>
+                                            <HoursText sep={true}>Close</HoursText>
+                                            <HoursText>{item.close}</HoursText>
+                                        </Box>
+                                    </Flex>
                                 :
                                     <HoursText sep={true}>Closed</HoursText>
                                 }
+                                
                             </Day>
                         ))}
+
                     </Hours>
                 </Flex>
 
@@ -46,7 +70,7 @@ class OpeningHours extends React.Component {
                         style={'mapbox://styles/conormcafee/cjths1n6g7vu21fpexmcbev7i'}
                         minZoom={20}
                         center={[-7.2494442, 52.6524416]}
-                        zoom={[15]}
+                        zoom={[1/5]}
                         scrollZoom={[false]}
                         interactive={[false]}
                         dragPan={[false]}
@@ -58,7 +82,8 @@ class OpeningHours extends React.Component {
                                 scrollZoom={false}
                                 type="symbol"
                                 id="marker"
-                                layout={{ "icon-image": "marker-15" }}>
+                                layout={{ "icon-image": "marker-15" }}
+                                >
                             <Feature />
                             </Layer>
                     </Map>
@@ -73,30 +98,37 @@ export default OpeningHours
 
 const Hours = styled(Flex)`
     background: ${COLOR.BRAND.BASE};
-    border-radius: 4px;
     position: relative;
     z-index: 9999;
+
+    @media only screen and (min-width: 850px) {
+        border-radius: 4px;
+    }
 `
 
 const Day = styled(Flex)`
-	flex-direction: column;
 	text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-	&:not(:first-of-type) {
-		border-left: 1px solid ${COLOR.PRIMARY.MID};
-	}
+    @media only screen and (min-width: 850px) {
+        border-bottom: none;
+
+        &:not(:first-of-type) {
+		    border-left: 1px solid rgba(0, 0, 0, 0.1);
+	    }
+    }
 `
 
 const HoursText = styled.span`
 	display: block;
-	margin-top: ${props => props.sep ? `16px` : `0px`};
-	margin-bottom: 0px;
+	/* margin-top: ${props => props.sep ? `16px` : `0px`}; */
+    margin-bottom: ${props => props.header ? `8px` : `0px`};
 	font-size: ${props => props.sep ? `12px` : `inherit`};
 	color: ${props => props.sep ? `${COLOR.PRIMARY.MID}` : `#ffffff`};
 `
 
 const MapBox = styled.div`
-    margin-top: -100px
+    margin-top: -100px;
 `
 
 const OPENING_HOURS = [
