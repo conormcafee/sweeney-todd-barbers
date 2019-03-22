@@ -2,12 +2,8 @@ import React from "react"
 import {Flex, Box} from "@rebass/grid"
 import styled from "styled-components"
 import {COLOR} from "../../globals"
-import ReactMapboxGl, { Marker } from "react-mapbox-gl"
-import MarkerIcon from "../../images/marker.svg"
-
-const Map = ReactMapboxGl({
-    accessToken: "pk.eyJ1IjoiY29ub3JtY2FmZWUiLCJhIjoiY2p0aHJxZDE5MTBqaDN5cnJvOTkyOWc2aSJ9.dz0lrgHAY72fhJ-yirEHmA"
-});
+import Map from "../Map"
+import Button from "../Button"
 
 class OpeningHours extends React.Component {
     render() {
@@ -18,6 +14,7 @@ class OpeningHours extends React.Component {
                         <Box width={1} as="article" px={[3, 4]}>
                             <h2>Opening Hours</h2>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut at felis tortor..</p>
+                            <Button />
                         </Box>
                     </Flex>
                     
@@ -65,25 +62,7 @@ class OpeningHours extends React.Component {
                     </Hours>
                 </Flex>
 
-                <MapBox>
-                    <Map
-                        // eslint-disable-next-line
-                        style={'mapbox://styles/conormcafee/cjths1n6g7vu21fpexmcbev7i'}
-                        center={[-7.2494442, 52.6524416]}
-                        zoom={[15]}
-                        boxZoom={false}
-                        scrollZoom={[false]}
-                        interactive={false}
-                        dragPan={false}
-                        containerStyle={{
-                            height: "65vh",
-                            width: "100vw"
-                        }}>
-                            <Marker coordinates={[-7.2494442, 52.6524416]} anchor="bottom">
-                                <img src={MarkerIcon} alt="Sweeney Todd Location" />
-                            </Marker>
-                    </Map>
-                </MapBox>
+                <Map />
             </React.Fragment>
         )
     }
@@ -120,10 +99,6 @@ const HoursText = styled.span`
     margin-bottom: ${props => props.header ? `8px` : `0px`};
 	font-size: ${props => props.sep ? `12px` : `inherit`};
 	color: ${props => props.sep ? `${COLOR.PRIMARY.MID}` : `#ffffff`};
-`
-
-const MapBox = styled.div`
-    margin-top: -100px;
 `
 
 const OPENING_HOURS = [

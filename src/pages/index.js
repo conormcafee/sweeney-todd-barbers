@@ -7,24 +7,47 @@ import PriceList from "../components/PriceList"
 import Testimonials from "../components/Testimonials"
 import PhotoGallery from "../components/PhotoGallery"
 import OpeningHours from "../components/OpeningHours"
+import Footer from "../components/Footer"
 
-const Index = () => (
-	<Layout>
-		<SEO title="Home" keywords={[`sweeney todd barbers`, `kilkenny`, `ireland`]} />
-		
-		<Hero />
-		
-			<About />
+class Index extends React.Component {
+	constructor(props) {
+		super(props);
+		this.about = React.createRef()
+		this.prices = React.createRef()
+		this.opening = React.createRef()
+	} 
 
-			<PriceList />
+	scroll = (data) => window.scrollTo({
+		left: 0, 
+		top: this[data].current.offsetTop,
+		behavior: 'smooth'
+	}) //console.log(this[data])
 
-			<Testimonials />
+	render() {
+		return (
+			<Layout>
+				<SEO title="Home" keywords={[`sweeney todd barbers`, `kilkenny`, `ireland`]} />
+				<Hero scroll={this.scroll} />
+				
+				<div ref={this.about}>
+					<About />
+				</div>
 
-			<PhotoGallery />
+				<div ref={this.prices}>
+					<PriceList />
+				</div>
+				
+				<Testimonials />
+				
+				<PhotoGallery />
 
-			<OpeningHours />
-			
-	</Layout>
-)
+				<div ref={this.opening}>
+					<OpeningHours />
+				</div>
+				<Footer />
+			</Layout>
+		)
+	}
+}
 
 export default Index

@@ -8,6 +8,10 @@ export const GlobalStyle = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         font-family: 'Josefin Sans', sans-serif;
         font-weight: 400;

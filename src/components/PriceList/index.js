@@ -2,9 +2,9 @@ import React from "react"
 import {Flex,Box} from "@rebass/grid"
 import styled from "styled-components"
 import Blade from "../../images/blade.svg"
-import Sign from "../../images/barber-sign.svg"
 import { COLOR } from "../../globals";
 import Brushes from "../../images/backgrounds/barber-brushes.jpg"
+import Button from "../Button"
 
 class PriceListComponent extends React.Component {
     render() {
@@ -14,6 +14,7 @@ class PriceListComponent extends React.Component {
                     <Intro width={1} px={[3, 4]}>
                         <h2>Prices</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut at felis tortor.</p>
+                        <Button />
                     </Intro>
                 </Services>
 
@@ -30,8 +31,6 @@ class PriceListComponent extends React.Component {
                         ))}
                     </Flex>
                 </Services>
-
-                <BackgroundBlade src={Sign} alt="Sweeney Todd Services" />
             </ServicesWrapper>
         )
     }
@@ -97,15 +96,6 @@ const Price = styled.span`
     font-family: 'Rye', cursive;
     font-weight: 700;
     color: ${COLOR.BRAND.BASE};
-`
-
-const BackgroundBlade = styled.img`
-    position: absolute;
-    top: 32px;
-    right: 128px;
-    height: 75vh;
-    width: auto;
-    opacity: 0.2;
 `
 
 const PRICE_LIST = [

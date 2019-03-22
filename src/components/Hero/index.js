@@ -5,10 +5,11 @@ import Header from "../header"
 import Texture from "../../images/backgrounds/asfalt-light.png"
 import Salon from "../../images/backgrounds/sweeney-todd-salon.jpg"
 import {COLOR} from "../../globals"
+import Button from "../Button"
 
-const Hero = () => (
+const Hero = (props) => (
     <Wrapper style={{ backgroundImage: `url(${Salon})`}}>
-		<Header />
+		<Header scroll={props.scroll} />
         <Content
 			as="section"
 			flexDirection="column"
@@ -19,7 +20,7 @@ const Hero = () => (
 				<h1><Quote start={true.toString()}>"</Quote>The no.1 friendly barbers in Kilkenny<Quote start={false.toString()}>"</Quote></h1>
 			</blockquote>
 
-			<Button>Call Us</Button>
+			<Button />
         </Content>
     </Wrapper>
 )
@@ -85,31 +86,4 @@ const Content = styled(Flex)`
 	z-index: 1;
 	text-align:center;
 	height: calc(100vh - 240px);
-`
-
-const Button = styled.a`
-	display: inline-block;
-	line-height: 1.3;
-	color: #ffffff;
-	background: ${COLOR.BRAND.BASE};
-	border: 2px solid ${COLOR.BRAND.BASE};
-	padding: 6px 16px;
-	border-radius: 4px;
-	font-weight: 600;
-	text-transform: uppercase;
-	box-shadow: -5px 7px 7px 2px rgba(0,0,0,0.1);
-	margin-right: ${props => props.mr ? `32px` : `0px`};
-	text-decoration: none;
-	transition: background 150ms ease-in, border-color 150ms ease-in, color 150ms ease-in;
-
-	&:hover {
-		cursor: pointer;
-		background: ${COLOR.BRAND.BASE};
-		color: #ffffff;
-		border: 2px solid ${COLOR.BRAND.BASE};
-	}
-
-	@media only screen and (min-width: 768px) {
-		padding: 10px 32px;
-	}
 `
