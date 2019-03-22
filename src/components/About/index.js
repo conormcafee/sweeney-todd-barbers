@@ -5,6 +5,7 @@ import Barbers from "../../images/sweeney-barbers.jpg"
 
 const About = () => (
     <Wrapper 
+        id="about"
         as="section" 
         flexWrap={['wrap']}
         justifyContent="space-between"

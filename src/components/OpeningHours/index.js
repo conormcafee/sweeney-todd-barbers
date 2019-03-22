@@ -9,7 +9,7 @@ class OpeningHours extends React.Component {
     render() {
         return (
             <React.Fragment>
-                <Flex flexWrap="wrap" justifyContent="center" pt={5}>
+                <Flex id="opening" flexWrap="wrap" justifyContent="center" pt={5}>
                     <Flex width={1} alignItems="center" justifyContent="center" css={{ maxWidth: '900px'}}>
                         <Box width={1} as="article" px={[3, 4]}>
                             <h2>Opening Hours</h2>

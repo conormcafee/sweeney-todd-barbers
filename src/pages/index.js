@@ -10,40 +10,16 @@ import OpeningHours from "../components/OpeningHours"
 import Footer from "../components/Footer"
 
 class Index extends React.Component {
-	constructor(props) {
-		super(props);
-		this.about = React.createRef()
-		this.prices = React.createRef()
-		this.opening = React.createRef()
-	} 
-
-	scroll = (data) => window.scrollTo({
-		left: 0, 
-		top: this[data].current.offsetTop,
-		behavior: 'smooth'
-	}) //console.log(this[data])
-
 	render() {
 		return (
 			<Layout>
 				<SEO title="Home" keywords={[`sweeney todd barbers`, `kilkenny`, `ireland`]} />
 				<Hero scroll={this.scroll} />
-				
-				<div ref={this.about}>
-					<About />
-				</div>
-
-				<div ref={this.prices}>
-					<PriceList />
-				</div>
-				
+				<About />
+				<PriceList />
 				<Testimonials />
-				
 				<PhotoGallery />
-
-				<div ref={this.opening}>
-					<OpeningHours />
-				</div>
+				<OpeningHours />
 				<Footer />
 			</Layout>
 		)

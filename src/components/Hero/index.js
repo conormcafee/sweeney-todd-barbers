@@ -7,9 +7,9 @@ import Salon from "../../images/backgrounds/sweeney-todd-salon.jpg"
 import {COLOR} from "../../globals"
 import Button from "../Button"
 
-const Hero = (props) => (
+const Hero = () => (
     <Wrapper style={{ backgroundImage: `url(${Salon})`}}>
-		<Header scroll={props.scroll} />
+		<Header />
         <Content
 			as="section"
 			flexDirection="column"

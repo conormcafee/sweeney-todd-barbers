@@ -3,6 +3,7 @@ import styled from "styled-components"
 import {Flex} from "@rebass/grid"
 import {COLOR} from "../globals"
 import WhiteLogo from "../images/logo-white.svg"
+import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 class _Header extends React.Component {
 	render() {
@@ -23,7 +24,7 @@ class _Header extends React.Component {
 				
 				<Nav>
 					{data.map((item, index) => (
-						<Link onClick={() => this.props.scroll(item.ref)}button={item.button} key={index}>{item.title}</Link>
+						<Link href={`#${item.ref}`} button={item.button} key={index}>{item.title}</Link>
 					))}
 				</Nav>
 			</Header>
@@ -72,7 +73,7 @@ const Nav = styled.nav`
 	}
 `
 
-const Link = styled.span`
+const Link = styled(AnchorLink)`
 	color: #ffffff;
 	font-size: 12px;
 	border: 2px solid ${props => props.button ? `#ffffff` : `transparent`};
@@ -80,6 +81,7 @@ const Link = styled.span`
 	padding: ${props => props.button ? `4px 8px` : `0`};
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
 	text-transform: uppercase;
+	text-decoration: none;
 	
 	&:not(:first-of-type) {
 		margin-left: 32px;

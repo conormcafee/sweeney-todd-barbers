@@ -9,7 +9,7 @@ import Button from "../Button"
 class PriceListComponent extends React.Component {
     render() {
         return (
-            <ServicesWrapper>
+            <ServicesWrapper id="prices">
                 <Services flexWrap='wrap' css={{ maxWidth: '900px'}} pt={5} mx="auto">
                     <Intro width={1} px={[3, 4]}>
                         <h2>Prices</h2>
