@@ -2,7 +2,8 @@ import React from "react"
 import {Flex, Box} from "@rebass/grid"
 import styled from "styled-components"
 import {COLOR} from "../../globals"
-import ReactMapboxGl, { Layer, Feature} from "react-mapbox-gl"
+import ReactMapboxGl, { Marker } from "react-mapbox-gl"
+import MarkerIcon from "../../images/marker.svg"
 
 const Map = ReactMapboxGl({
     accessToken: "pk.eyJ1IjoiY29ub3JtY2FmZWUiLCJhIjoiY2p0aHJxZDE5MTBqaDN5cnJvOTkyOWc2aSJ9.dz0lrgHAY72fhJ-yirEHmA"
@@ -68,24 +69,19 @@ class OpeningHours extends React.Component {
                     <Map
                         // eslint-disable-next-line
                         style={'mapbox://styles/conormcafee/cjths1n6g7vu21fpexmcbev7i'}
-                        minZoom={20}
                         center={[-7.2494442, 52.6524416]}
-                        zoom={[1/5]}
+                        zoom={[15]}
+                        boxZoom={false}
                         scrollZoom={[false]}
-                        interactive={[false]}
-                        dragPan={[false]}
+                        interactive={false}
+                        dragPan={false}
                         containerStyle={{
-                            height: "75vh",
+                            height: "65vh",
                             width: "100vw"
                         }}>
-                            <Layer
-                                scrollZoom={false}
-                                type="symbol"
-                                id="marker"
-                                layout={{ "icon-image": "marker-15" }}
-                                >
-                            <Feature />
-                            </Layer>
+                            <Marker coordinates={[-7.2494442, 52.6524416]} anchor="bottom">
+                                <img src={MarkerIcon} alt="Sweeney Todd Location" />
+                            </Marker>
                     </Map>
                 </MapBox>
             </React.Fragment>
@@ -121,7 +117,6 @@ const Day = styled(Flex)`
 
 const HoursText = styled.span`
 	display: block;
-	/* margin-top: ${props => props.sep ? `16px` : `0px`}; */
     margin-bottom: ${props => props.header ? `8px` : `0px`};
 	font-size: ${props => props.sep ? `12px` : `inherit`};
 	color: ${props => props.sep ? `${COLOR.PRIMARY.MID}` : `#ffffff`};
