@@ -1,7 +1,12 @@
 import React from "react"
 import styled from "styled-components"
 import {Flex, Box} from "@rebass/grid"
+
 import Barbers from "../../images/sweeney-barbers.jpg"
+import Wheelchair from "../../images/wheelchair.svg"
+import Friendly from "../../images/friendly.svg"
+import SpecialNeeds from "../../images/special-needs.svg"
+import Efficient from "../../images/efficient.svg"
 
 const About = () => (
     <Wrapper 
@@ -18,7 +23,17 @@ const About = () => (
             <h2>Friendly, Talented Barbers in the Heart of Kilkenny Town</h2>
             <p>We cater for all ages and styles and no hair style is too challenging for us.</p>
             <p>With nearly 50 years combined experience, you are in safe hands with Sandra and Ruth - we have the experience and know-how to transform your image and have you looking ship shape in no time.</p>
-            <p>Our friendly and open atmosphere means we can cater for all of your needs - autistic & special needs friendly. We also provide specialist hair care services for people with hairloss and hair maintenence needs</p>
+            <p>Our friendly and open atmosphere means we can cater for all of your needs - autistic & special needs friendly. We also provide specialist hair care services for people with hairloss and hair maintenence needs.</p>
+
+            <Flex flexWrap="wrap">
+                {ICONS.map((item, index) => (
+                    <Flex flexDirection="column" alignItems="flex-start" width={1/2} mt={4} key={index} >
+                        <img src={item.img} alt={`Sweeney Todd's ${item.alt}`} />
+                        <IconTitle>{item.title}</IconTitle>
+                    </Flex>
+                ))}
+            </Flex>
+            
         </Box>
 
         <Box width={[1, 1/2]} px={[3, 4]}>
@@ -51,3 +66,31 @@ const AboutImage = styled.img`
 	transform: rotate(-45deg);
 	filter: grayscale(100%);
 `
+
+const IconTitle = styled.span`
+    margin-top: 10px;
+`
+
+const ICONS = [
+    {
+        img: Friendly,
+        title: "Friendly",
+        alt: "are friendly"
+    },
+    {
+        img: Efficient,
+        title: "Efficient",
+        alt: "are efficient"
+    },
+    {
+        img: Wheelchair,
+        title: "Wheelchair Accessible",
+        alt: "are wheelchair accessible"
+    },
+    {
+        img: SpecialNeeds,
+        title: "Autism & Special Needs Friendly",
+        alt: "are autism and special needs friendly"
+    },
+    
+]

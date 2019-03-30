@@ -2,12 +2,18 @@ import React from "react"
 import styled from "styled-components"
 import {Flex, Box} from "@rebass/grid"
 
-import IMG01 from "../../images/hair/01.jpeg"
-import IMG02 from "../../images/hair/02.jpeg"
-import IMG03 from "../../images/hair/03.jpeg"
-import IMG04 from "../../images/hair/04.jpeg"
-import IMG05 from "../../images/hair/05.jpeg"
-import IMG06 from "../../images/hair/06.jpeg"
+import IMG01 from "../../images/hair/01.jpg"
+import IMG02 from "../../images/hair/02.jpg"
+import IMG03 from "../../images/hair/03.jpg"
+import IMG04 from "../../images/hair/04.jpg"
+import IMG05 from "../../images/hair/05.jpg"
+import IMG06 from "../../images/hair/06.jpg"
+import IMG07 from "../../images/hair/07.jpg"
+import IMG08 from "../../images/hair/08.jpg"
+import IMG09 from "../../images/hair/09.jpg"
+import IMG10 from "../../images/hair/10.jpg"
+import IMG11 from "../../images/hair/11.jpg"
+import IMG12 from "../../images/hair/12.jpg"
 
 const PhotoGallery = () => (
     <Wrapper 
@@ -68,6 +74,10 @@ const IMAGES = [
 	{ image: IMG04 },
 	{ image: IMG05 },
 	{ image: IMG06 },
-	{ image: IMG01 },
-	{ image: IMG02 }
+	{ image: IMG07 },
+	{ image: IMG08 },
+	{ image: IMG09 },
+	{ image: IMG10 },
+	{ image: IMG11 },
+	{ image: IMG12 },
 ]

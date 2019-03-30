@@ -81,13 +81,18 @@ const Author = styled.p`
 
 const TESTIMONIALS = [
     {
-        title: "Best Hair Cut in Kilkenny",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut at felis tortor..",
-        author: "Conor McAfee"
+        title: "I've Never Had a Better Haircut",
+        text: "It's great to relax and enjoy a haircut for once knowing that you are in the skilled care of a Master Barber. I've never had a better haircut. Sandra makes me look 10 years younger and feel twice as smart which is some achievement!",
+        author: "Trevor Gallagher"
     },
     {
-        title: "The Barbers are Really Friendly",
-        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla suscipit. Orci varius natoque penatibus et.",
-        author: "Maeve Finnegan"
+        title: "The Best Barbers in Kilkenny",
+        text: "The best barbers in Kilkenny. Lovely friendly staff who always give you exactly what you want. I wouldn’t go anywhere else. Can’t recommend enough. 10/10.",
+        author: "Noel Kehoe"
+    }, 
+    {
+        title: "So Friendly and Professional",
+        text: "I took my son for his haircut today which is usually stressful on him but the owner was so friendly and professional and put him right at ease. Great service at a great price. Will definitely be back.",
+        author: "Lianne Kelly"
     }
 ]

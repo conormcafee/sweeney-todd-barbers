@@ -13,7 +13,7 @@ class PriceListComponent extends React.Component {
                 <Services flexWrap='wrap' css={{ maxWidth: '900px'}} pt={5} mx="auto">
                     <Intro width={1} px={[3, 4]}>
                         <h2>Prices</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut at felis tortor.</p>
+                        <p>Our experienced team cover all aspects of barbering from classic cuts to beard grooming. We use traditional techniques and creative products to achieve the look you're going for. We currently only accept cash payments but will be installing card facilities in the near future.</p>
                         <Button />
                     </Intro>
                 </Services>
@@ -104,7 +104,8 @@ const PRICE_LIST = [
 	{ title: "Shave All Over",		    highlight: "€12"},
 	{ title: "Primary School Going",    highlight: "€10 - €13.50"},
 	{ title: "Baby", 					highlight: "€8"},
-	{ title: "Beard Trim",			    highlight: "€5 - €8"},
+    { title: "Beard Trim",			    highlight: "€5 - €8"},
+    { title: "Hot Towel Shaving",       highlight: "€25"},
 	{ title: "Colour & Cut", 			highlight: "€30 - €35"},
-	{ title: "Girls", 				    highlight: "€15 - €25"}
+	{ title: "Girls", 				    highlight: "€15 - €25"},
 ]

@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Sweeney Todd Barbers`,
-    description: `Sweeney Todd Barbers Description`,
+    title: `Sweeney Todd Barbers, Kilkenny`,
+    description: `Friendly, talented barbers in the heart of Kilkenny town.  We cater for all ages and styles and no hair style is too challenging for us.  Call us today for an appointment +(353) 8640 40676.`,
     author: `@conormcafee`,
   },
   plugins: [

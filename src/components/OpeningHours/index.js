@@ -13,7 +13,7 @@ class OpeningHours extends React.Component {
                     <Flex width={1} alignItems="center" justifyContent="center" css={{ maxWidth: '900px'}}>
                         <Box width={1} as="article" px={[3, 4]}>
                             <h2>Opening Hours</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus fringilla suscipit. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut at felis tortor..</p>
+                            <p>We accept all walk-ins but we advise clients to call in advance to secure their appointment. Hot towel shaving is only available Wednesday - Saturday. We're open every day excluding Sundays and Bank Holidays.</p>
                             <Button />
                         </Box>
                     </Flex>
