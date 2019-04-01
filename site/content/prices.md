@@ -20,9 +20,9 @@ priceList:
     price: €5 - €8
   - name: Hot Towel Shaving
     price: €25
-  - name: Colour & Cut
-    price: €30 - €35
   - name: Girls
     price: €15 - €25
+  - name: Colour & Cut
+    price: €30 - €35
 ---
 
