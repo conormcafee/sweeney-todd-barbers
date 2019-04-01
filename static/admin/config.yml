@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: conormcafee/sweeney-todd-barbers
+
+media_folder: static/assets
+public_folder: assets
+
+collections: 
+- label: "Homepage"
+  name: "homepage"
+  files:
+    - name: about
+      label: About
+      file: "site/content/about.yml"
+      fields: 
+        -  { label: Title, name: title, widget: string}
+        -  { label: Content, name: content, widget: text}
