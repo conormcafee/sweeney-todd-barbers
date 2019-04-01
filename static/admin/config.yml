@@ -7,8 +7,8 @@ media_folder: static/assets
 public_folder: assets
 
 collections: 
- -  label: "Page"
-    name: "pages"
+ -  label: "Homepage"
+    name: "homepage"
     files:
       - label: "About"
         name: "about"
@@ -18,14 +18,21 @@ collections:
           - {label: Intro, name: intro, widget: markdown}
       - label: "Prices"
         name: "prices"
-        file: "site/content/prices.md"
+        file: "site/content/prices.yml"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
+          - label: Price List
+            name: priceList
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Price, name: price, widget: string}
       - label: "Testimonials"
         name: "testimonials"
         file: "site/content/testimonials.md"
         widget: "list"
+        allow_add: true
         fields:
           - label: Testimonial
             name: testimonial
