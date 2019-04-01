@@ -18,7 +18,7 @@ collections:
           - {label: Intro, name: intro, widget: markdown}
       - label: "Prices"
         name: "prices"
-        file: "site/content/prices.yml"
+        file: "site/content/prices.md"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
