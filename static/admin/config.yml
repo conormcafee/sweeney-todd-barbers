@@ -26,6 +26,7 @@ collections:
         name: "testimonials"
         file: "site/content/testimonials.md"
         widget: "list"
+        allow_add: true
         fields:
           - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
           - label: Author
