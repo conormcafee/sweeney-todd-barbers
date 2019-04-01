@@ -22,10 +22,15 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
-      - label: "Price List"
-        name: "priceList"
-        file: "site/content/priceList.md"
-        widget: list
+      - label: "Testimonials"
+        name: "testimonials"
+        file: "site/content/testimonials.md"
+        widget: "list"
         fields:
-          - {label: Title, name: title, widget: string}
-          - {label: Price, name: price, widget: markdown}
+          - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
+          - label: Author
+            name: author
+            widget: object
+            fields:
+              - {label: Name, name: name, widget: string, default: "Emmet"}
+              - {label: Avatar, name: avatar, widget: image, default: "/img/emmet.jpg"}
