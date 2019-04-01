@@ -10,9 +10,22 @@ collections:
  -  label: "Page"
     name: "pages"
     files:
-      - label: "About Page"
+      - label: "About"
         name: "about"
         file: "site/content/about.md"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
+      - label: "Prices"
+        name: "prices"
+        file: "site/content/prices.md"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+      - label: "Price List"
+        name: "priceList"
+        file: "site/content/priceList.md"
+        widget: list
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Price, name: price, widget: markdown}
