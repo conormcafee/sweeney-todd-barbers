@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import {Flex} from "@rebass/grid"
 import {COLOR} from "../globals"
-import WhiteLogo from "../images/logo-white.svg"
+import ST_Logo from "../images/logo.png"
 import AnchorLink from 'react-anchor-link-smooth-scroll'
 
 class _Header extends React.Component {
@@ -19,7 +19,7 @@ class _Header extends React.Component {
 				css={{ maxWidth: '1200px' }}
 			>
 				<LogoWrapper>
-					<Logo src={WhiteLogo} alt="Sweeney Todd Barbers, Kilkenny" />
+					<Logo src={ST_Logo} alt="Sweeney Todd Barbers, Kilkenny" />
 				</LogoWrapper>
 				
 				<Nav>
