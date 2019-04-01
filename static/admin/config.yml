@@ -26,12 +26,11 @@ collections:
         name: "testimonials"
         file: "site/content/testimonials.md"
         widget: "list"
-        create: true
         fields:
-          - {label: Quote, name: quote, widget: string, default: "Everything is awesome!"}
-          - label: Author
-            name: author
+          - label: Testimonial
+            name: testimonial
             widget: object
             fields:
-              - {label: Name, name: name, widget: string, default: "Emmet"}
-              - {label: Avatar, name: avatar, widget: image, default: "/img/emmet.jpg"}
+              - {label: Name, name: name, widget: string}
+              - {label: Title, name: title, widget: string}
+              - {label: Message, name: message, widget: string}
