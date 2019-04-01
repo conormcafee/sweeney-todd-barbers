@@ -7,12 +7,7 @@ import { COLOR } from "../../globals";
 import Brushes from "../../images/backgrounds/barber-brushes.jpg"
 import Button from "../Button"
 
-export default () => (
-    <StaticQuery 
-        query={pricedata}
-        render={data => <PriceList data={data} />}
-    />
-)
+export default () => <StaticQuery query={pricedata} render={data => <PriceList data={data} />} />
 
 const PriceList = (props) => {
     const path = props.data.file.childMarkdownRemark.frontmatter
