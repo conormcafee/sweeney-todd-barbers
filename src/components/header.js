@@ -24,7 +24,7 @@ class _Header extends React.Component {
 				
 				<Nav>
 					{data.map((item, index) => (
-						<Link href={`#${item.ref}`} button={item.button} key={index}>{item.title}</Link>
+						<Link href={`#${item.ref}`} button={item.button.toString()} key={index}>{item.title}</Link>
 					))}
 				</Nav>
 			</Header>
@@ -76,7 +76,7 @@ const Nav = styled.nav`
 const Link = styled(AnchorLink)`
 	color: #ffffff;
 	font-size: 12px;
-	border: 2px solid ${props => props.button ? `#ffffff` : `transparent`};
+	border: 2px solid ${props => props.button === 'true' ? `#ffffff` : `transparent`};
 	border-radius: 4px;
 	padding: ${props => props.button ? `4px 8px` : `0`};
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);

@@ -1,42 +1,67 @@
 import React from "react"
 import {Flex,Box} from "@rebass/grid"
+import {StaticQuery, graphql} from "gatsby"
 import styled from "styled-components"
 import Blade from "../../images/blade.svg"
 import { COLOR } from "../../globals";
 import Brushes from "../../images/backgrounds/barber-brushes.jpg"
 import Button from "../Button"
 
-class PriceListComponent extends React.Component {
-    render() {
-        return (
-            <ServicesWrapper id="prices">
-                <Services flexWrap='wrap' css={{ maxWidth: '900px'}} pt={5} mx="auto">
-                    <Intro width={1} px={[3, 4]}>
-                        <h2>Prices</h2>
-                        <p>Our experienced team cover all aspects of barbering from classic cuts to beard grooming. We use traditional techniques and creative products to achieve the look you're going for. We currently only accept cash payments but will be installing card facilities in the near future.</p>
-                        <Button />
-                    </Intro>
-                </Services>
+export default () => (
+    <StaticQuery 
+        query={pricedata}
+        render={data => <PriceList data={data} />}
+    />
+)
 
-                <Services flexWrap='wrap' css={{ maxWidth: '1300px'}} py={5} mx="auto">
-                    <Flex flexWrap='wrap' css={{ maxWidth: '1200px'}} mx="auto">
-                        {PRICE_LIST.map((item, index) => (
-                            <Box width={[1, 1/2, 1/3]} px={[3, 4]} key={index}>
-                                <Service p={3} mb={[3, 4]}>
-                                    <span>{item.title}</span>
-                                    <Price>{item.highlight}</Price>
-                                    <img src={Blade} alt="Sweeney Todd Blade" />
-                                </Service>
-                            </Box>
-                        ))}
-                    </Flex>
-                </Services>
-            </ServicesWrapper>
-        )
-    }
+const PriceList = (props) => {
+    const path = props.data.file.childMarkdownRemark.frontmatter
+    const title = path.title
+    const intro = path.intro
+    const priceList = path.priceList
+    return (
+        <ServicesWrapper id="prices">
+            <Services flexWrap='wrap' css={{ maxWidth: '900px'}} pt={5} mx="auto">
+                <Intro width={1} px={[3, 4]}>
+                    <h2>{title}</h2>
+                    <p>{intro}</p>
+                    <Button />
+                </Intro>
+            </Services>
+
+            <Services flexWrap='wrap' css={{ maxWidth: '1300px'}} py={5} mx="auto">
+                <Flex flexWrap='wrap' css={{ maxWidth: '1200px'}} mx="auto">
+                    {priceList.map((item, index) => (
+                        <Box width={[1, 1/2, 1/3]} px={[3, 4]} key={index}>
+                            <Service p={3} mb={[3, 4]}>
+                                <span>{item.name}</span>
+                                <Price>{item.price}</Price>
+                                <img src={Blade} alt="Sweeney Todd Blade" />
+                            </Service>
+                        </Box>
+                    ))}
+                </Flex>
+            </Services>
+        </ServicesWrapper>
+    )
 }
 
-export default PriceListComponent
+const pricedata = graphql`
+    query {
+        file(name:{ eq: "prices"}) {
+            childMarkdownRemark {
+                frontmatter {
+                    title
+                    intro
+                    priceList {
+                        name
+                        price
+                    }
+                }
+            }
+        }
+    }
+`
 
 const ServicesWrapper = styled.section`
     background-image: url(${Brushes});
@@ -97,15 +122,3 @@ const Price = styled.span`
     font-weight: 700;
     color: ${COLOR.BRAND.BASE};
 `
-
-const PRICE_LIST = [
-	{ title: "Dry Cut", 			    highlight: "€15 - €17"},
-	{ title: "Wash Cut / Blow Dry", 	highlight: "€17"},
-	{ title: "Shave All Over",		    highlight: "€12"},
-	{ title: "Primary School Going",    highlight: "€10 - €13.50"},
-	{ title: "Baby", 					highlight: "€8"},
-    { title: "Beard Trim",			    highlight: "€5 - €8"},
-    { title: "Hot Towel Shaving",       highlight: "€25"},
-	{ title: "Colour & Cut", 			highlight: "€30 - €35"},
-	{ title: "Girls", 				    highlight: "€15 - €25"},
-]

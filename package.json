@@ -17,6 +17,7 @@
     "gatsby-plugin-sharp": "^2.0.27",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.24",
+    "gatsby-transformer-remark": "^2.3.8",
     "gatsby-transformer-sharp": "^2.1.16",
     "google-map-react": "^1.1.2",
     "mapbox-gl": "^0.53.1",
