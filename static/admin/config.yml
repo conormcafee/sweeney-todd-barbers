@@ -31,12 +31,10 @@ collections:
       - label: "Testimonials"
         name: "testimonials"
         file: "site/content/testimonials.md"
-        widget: "list"
-        allow_add: true
         fields:
           - label: Testimonial
             name: testimonial
-            widget: object
+            widget: list
             fields:
               - {label: Name, name: name, widget: string}
               - {label: Title, name: title, widget: string}
