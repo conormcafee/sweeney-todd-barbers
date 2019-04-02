@@ -1,4 +1,5 @@
 import React from "react"
+import {StaticQuery, graphql} from "gatsby"
 import styled from "styled-components"
 import {Flex, Box} from "@rebass/grid"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
@@ -7,32 +8,52 @@ import { COLOR } from "../../globals";
 
 import "./overide.css";
 
-const Testimonials = () => (
-    <Wrapper py={[5,6]}>
-        <Carousel autoplay={true} showThumbs={false} showStatus={false} showArrows={false}>
-            {TESTIMONIALS.map((item, index) => (
-                <Flex 
-                    key={index} 
-                    flexWrap={['wrap', 'nowrap']}
-                    mx="auto" 
-                    css={{ maxWidth: '900px' }}>
-                    
-                    <TitleBox width={[1, 1/2]} p={[3,4]}>
-                        <SubTitle>Testimonials</SubTitle>
-                        <Title>{item.title}</Title>
-                    </TitleBox>
+export default () => <StaticQuery query={testimonialsQuery} render={data => <Testimonials data={data} />}/>
 
-                    <TextBox width={[1, 1/2]} p={[3,4]}>
-                        <Text>{item.text}</Text>   
-                        <Author>{item.author}</Author>    
-                    </TextBox>
-                </Flex>
-            ))}
-        </Carousel>
-    </Wrapper>
-)
+const Testimonials = (props) => {
+    const data = props.data
+    const testimonials = data.file.childMarkdownRemark.frontmatter.testimonial
+    return (
+        <Wrapper py={[5,6]}>
+            <Carousel autoplay={true} showThumbs={false} showStatus={false} showArrows={false}>
+                {testimonials.map((item, index) => (
+                    <Flex 
+                        key={index} 
+                        flexWrap={['wrap', 'nowrap']}
+                        mx="auto" 
+                        css={{ maxWidth: '900px' }}>
+                        
+                        <TitleBox width={[1, 1/2]} p={[3,4]}>
+                            <SubTitle>Testimonials</SubTitle>
+                            <Title>{item.title}</Title>
+                        </TitleBox>
 
-export default Testimonials
+                        <TextBox width={[1, 1/2]} p={[3,4]}>
+                            <Text>{item.message}</Text>   
+                            <Author>{item.name}</Author>    
+                        </TextBox>
+                    </Flex>
+                ))}
+            </Carousel>
+        </Wrapper>
+    )
+}
+
+const testimonialsQuery = graphql`
+    query {
+        file(name: { eq: "testimonials"}) {
+            childMarkdownRemark {
+                frontmatter {
+                    testimonial {
+                        message
+                        name
+                        title
+                    }
+                }
+            }
+        }
+    }
+`
 
 const Wrapper = styled(Flex)`
     overflow: hidden;
@@ -78,21 +99,3 @@ const Author = styled.p`
     font-size: 12px;
     color: ${COLOR.BRAND.BASE};
 `
-
-const TESTIMONIALS = [
-    {
-        title: "I've Never Had a Better Haircut",
-        text: "It's great to relax and enjoy a haircut for once knowing that you are in the skilled care of a Master Barber. I've never had a better haircut. Sandra makes me look 10 years younger and feel twice as smart which is some achievement!",
-        author: "Trevor Gallagher"
-    },
-    {
-        title: "The Best Barbers in Kilkenny",
-        text: "The best barbers in Kilkenny. Lovely friendly staff who always give you exactly what you want. I wouldn’t go anywhere else. Can’t recommend enough. 10/10.",
-        author: "Noel Kehoe"
-    }, 
-    {
-        title: "So Friendly and Professional",
-        text: "I took my son for his haircut today which is usually stressful on him but the owner was so friendly and professional and put him right at ease. Great service at a great price. Will definitely be back.",
-        author: "Lianne Kelly"
-    }
-]
