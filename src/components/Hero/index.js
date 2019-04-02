@@ -32,7 +32,6 @@ const Wrapper = styled.div`
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center center;
-	height: 100vh;
 
 	&:before {
 		content: "";
@@ -66,6 +65,10 @@ const Wrapper = styled.div`
 			font-size: 60px;
 		}
 	}
+
+	@media only screen and (min-width: 900px) {
+		height: 100vh;
+	}
 `
 
 const Quote = styled.span`
@@ -85,5 +88,10 @@ const Content = styled(Flex)`
 	position: relative;
 	z-index: 1;
 	text-align:center;
-	height: calc(100vh - 240px);
+	padding-top: 32px;
+	padding-bottom: 32px;
+
+	@media only screen and (min-width: 900px) {
+		height: calc(100vh - 240px);
+	}	
 `

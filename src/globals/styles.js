@@ -31,6 +31,16 @@ export const GlobalStyle = createGlobalStyle`
         height: auto;
     }
 
+    button {
+        appearance: none;
+        background: transparent;
+        border: none;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
     blockquote {
         position: relative;
         text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.7);
