@@ -5,6 +5,7 @@ backend:
 
 media_folder: static/assets
 public_folder: assets
+show_preview_links: false
 
 collections: 
  -  label: "Homepage"
