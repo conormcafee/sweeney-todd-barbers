@@ -5,7 +5,6 @@ backend:
 
 media_folder: static/assets
 public_folder: assets
-show_preview_links: false
 
 collections: 
  -  label: "Homepage"
@@ -40,3 +39,14 @@ collections:
               - {label: Name, name: name, widget: string}
               - {label: Title, name: title, widget: string}
               - {label: Message, name: message, widget: string}
+      - label: "Opening Hours"
+        name: "openingHours"
+        file: "site/content/openingHours.md"
+        fields: 
+          - label: Times
+            name: times
+            widget: list
+            fields:
+              - {label: Day, name: day, widget: string}
+              - {label: Open, name: open, widget: string}
+              - {label: Closed, name: closed, widget: string}
