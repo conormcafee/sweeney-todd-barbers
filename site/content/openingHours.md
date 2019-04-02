@@ -18,5 +18,6 @@ times:
   - closed: '18:00'
     day: Sat
     open: '08:30'
+  - day: Sun
 ---
 
