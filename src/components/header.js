@@ -54,11 +54,25 @@ const Header = styled(Box)`
 `
 
 const MenuButton = styled.button`
-	position: relative;
-	z-index: 1001;
+	position: fixed;
+	z-index: 10000;
+	top: 70px;
+	right: 16px;
+	height: 50px;
+	width: 50px;
+	border-radius: 100%;
+	background-color: rgba(35, 35, 35, 0.98);
 
 	@media only screen and (min-width: 768px) {
 		 display: none;
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	img {
+		transform: translateY(2px);
 	}
 `
 
@@ -66,7 +80,7 @@ const LogoWrapper = styled.div`
 	padding-top: 32px;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 
 	@media only screen and (max-width: 500px) {
 		width: 100%;
@@ -87,7 +101,7 @@ const Nav = styled.nav`
 		flex-direction: column;
 		justify-content: center;
 
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;

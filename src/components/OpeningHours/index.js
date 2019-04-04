@@ -89,7 +89,7 @@ const openingHoursQuery = graphql`
 const Hours = styled(Flex)`
     background: ${COLOR.BRAND.BASE};
     position: relative;
-    z-index: 9999;
+    z-index: 9;
 
     @media only screen and (min-width: 850px) {
         border-radius: 4px;
