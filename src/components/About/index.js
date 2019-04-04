@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import {Flex, Box} from "@rebass/grid"
 import {StaticQuery, graphql} from "gatsby"
-import Barbers from "../../images/sweeney-barbers.jpg"
 import Wheelchair from "../../images/wheelchair.svg"
 import Friendly from "../../images/friendly.svg"
 import SpecialNeeds from "../../images/special-needs.svg"
@@ -15,8 +14,9 @@ const About = (props) =>  {
     const path = data.file.childMarkdownRemark.frontmatter
     const title = path.title
     const getIntro = path.intro
-    let text = "<p>" + getIntro + "</p>";
-    text = text.replace(/\r\n\r\n/g, "</p><p>").replace(/\n\n/g, "</p><p>");
+    let text = "<p>" + getIntro + "</p>"
+    text = text.replace(/\r\n\r\n/g, "</p><p>").replace(/\n\n/g, "</p><p>")
+    const image = path.thumbnail
 
     return (
         <Wrapper 
@@ -49,11 +49,11 @@ const About = (props) =>  {
                 
             </Box>
 
-            <Box width={[1, 1/2]} px={[3, 4]}>
+            {image !== null && <Box width={[1, 1/2]} px={[3, 4]}>
                 <ImageWrapper>
-                    <AboutImage src={Barbers} alt="Susan & Ruth, Sweeney Barbers" />
+                    <AboutImage src={image} alt="Susan & Ruth, Sweeney Barbers" />
                 </ImageWrapper>
-            </Box>
+            </Box>}
         </Wrapper>
     )
 }
@@ -65,6 +65,7 @@ const aboutData = graphql`
                 frontmatter {
                     title
                     intro
+                    thumbnail
                 }
             }
         }
