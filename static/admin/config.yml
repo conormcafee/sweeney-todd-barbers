@@ -15,7 +15,13 @@ collections:
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
-          - {label: "Featured Image", name: "thumbnail", widget: "image", media_library: config: multiple: true}
+          - label: "Featured Image", 
+            name: "thumbnail",
+            widget: "image", 
+            media_library:  
+              config: 
+                multiple: true
+            
       - label: "Prices"
         name: "prices"
         file: "site/content/prices.md"
