@@ -12,5 +12,6 @@ intro: >-
   Our friendly and open atmosphere means we can cater for all of your needs -
   autistic & special needs friendly. We also provide specialist hair care
   services for people with hair loss and hair maintenance needs.
+thumbnail: /assets/sweeney-barbers.jpg
 ---
 
