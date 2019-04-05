@@ -12,7 +12,7 @@ times:
   - closed: '18:30'
     day: Thur
     open: '09:00'
-  - closed: '18:00'
+  - closed: '18:30'
     day: Fri
     open: '09:00'
   - closed: '18:00'
