@@ -4,9 +4,9 @@ intro: >-
   We cater for all ages and styles and no hair style is too challenging for us.
 
 
-  With nearly 50 years combined experience, you are in safe hands with Sandra
-  and Ruth - we have the experience and know-how to transform your image and
-  have you looking ship shape in no time.
+  With nearly 60 years combined experience, you are in safe hands with Sandra,
+  Ruth & Olivia - we have the experience and know-how to transform your image
+  and have you looking ship shape in no time.
 
 
   Our friendly and open atmosphere means we can cater for all of your needs -
