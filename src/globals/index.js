@@ -7,7 +7,8 @@ export const COLOR = {
 
     },
     BRAND: {
-        BASE: '#FAB645',
+        // BASE: '#FAB645',
+        BASE: '#ffbf00',
         LIGHT: '#FADCAA'
     },
 }

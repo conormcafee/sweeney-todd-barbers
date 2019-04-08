@@ -15,7 +15,11 @@ const Testimonials = (props) => {
     const testimonials = data.file.childMarkdownRemark.frontmatter.testimonial
     return (
         <Wrapper py={[5,6]}>
-            <Carousel autoplay={true} showThumbs={false} showStatus={false} showArrows={false}>
+            <Carousel 
+                autoplay={true} 
+                showThumbs={false} 
+                showStatus={false} 
+                showArrows={false}>
                 {testimonials.map((item, index) => (
                     <Flex 
                         key={index} 

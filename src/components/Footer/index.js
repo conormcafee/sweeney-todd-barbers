@@ -28,7 +28,7 @@ const Footer = () => (
                 px={[3,4]}
                 mb={[3, 3, 0]}>
                 <div>
-                    <Social left href="https://www.facebook.com/OllieLuke0709/" target="_blank" rel="noopener noreferrer" title="Sweeney Todd on Facebook">
+                    <Social left href="https://www.facebook.com/sweeneytoddkilkenny/" target="_blank" rel="noopener noreferrer" title="Sweeney Todd on Facebook">
                         <img src={Facebook} alt="Sweeney Todd on Facebook" />
                     </Social>
                         
