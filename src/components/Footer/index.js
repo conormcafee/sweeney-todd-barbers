@@ -19,6 +19,7 @@ const Footer = () => (
                 width={[1, 1, 1/2]}
                 px={[3,4]}
                 mb={[3, 3, 0]}>
+                <Link href="tel:+353864040676">+353 (86) 404 0676</Link>
                 <p>7 John Street Lower, Collegepark, Killkenny, Ireland, R95 X2V0</p>
             </Address>
 
@@ -46,10 +47,9 @@ export default Footer
 const Wrapper = styled.div`
     border-bottom: 5px solid ${COLOR.BRAND.BASE};
 `
-
 const Address = styled(Box)`
+    text-align: center;
     p {
-        text-align: center;
         font-size: 14px;
         line-height: 1.8;
         margin-top: 0;
@@ -58,6 +58,13 @@ const Address = styled(Box)`
         margin-left: auto;
         margin-right: auto;
     }
+`
+
+const Link = styled.a`
+    color: ${COLOR.BRAND.BASE};
+    text-align: center;   
+    margin-left: auto;
+    margin-right: auto; 
 `
 
 const Social = styled.a`

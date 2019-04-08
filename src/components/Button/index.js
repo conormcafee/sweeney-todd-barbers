@@ -4,7 +4,7 @@ import {COLOR} from "../../globals"
 
 
 const Button = () => (
-    <Btn href="tel:+353864040676">Call Us</Btn>
+    <Btn href="tel:+353864040676">Call Us<span> +353 (86) 404 0676</span></Btn>
 )
 
 export default Button
@@ -33,5 +33,11 @@ const Btn = styled.a`
 
 	@media only screen and (min-width: 768px) {
 		padding: 10px 32px;
+	}
+
+	@media only screen and (max-width: 767px) {
+		span {
+			display: none;
+		}
 	}
 `
