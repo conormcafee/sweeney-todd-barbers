@@ -19,7 +19,7 @@ const About = (props) =>  {
     const image = path.thumbnail
 
     return (
-        <Wrapper 
+        <Flex 
             id="about"
             as="section" 
             flexWrap={['wrap']}
@@ -49,12 +49,12 @@ const About = (props) =>  {
                 
             </Box>
 
-            {image !== null && <Box width={[1, 1/2]} px={[3, 4]}>
+            {image !== null && <ImageBox width={[1, 1/2]} px={[3, 4]}>
                 <ImageWrapper>
                     <AboutImage src={image} alt="Susan & Ruth, Sweeney Barbers" />
                 </ImageWrapper>
-            </Box>}
-        </Wrapper>
+            </ImageBox>}
+        </Flex>
     )
 }
 
@@ -72,15 +72,21 @@ const aboutData = graphql`
     }
 `
 
-const Wrapper = styled(Flex)`
-    overflow: hidden;
+const ImageBox = styled(Box)`
+    @media only screen and (max-width: 767px) {
+        transform: scale(0.7);
+    }
 `
 
 const ImageWrapper = styled.div`
 	background: rgba(250, 182, 69, 0.3);
 	padding: 32px;
 	border-radius: 20px;
-	transform: translate(75px, 0) rotate(45deg);
+	transform: translate(0px, 0) rotate(45deg);
+
+    @media only screen and (min-width: 768px) {
+        transform: translate(75px, 0) rotate(45deg);
+    }
 `
 
 const AboutImage = styled.img`
