@@ -34,6 +34,12 @@ const About = (props) =>  {
 
                 <div dangerouslySetInnerHTML={{ __html: text }} />
 
+                {image !== null && <ImageBox mobile={true} width={[1, 1/2]} px={[3, 4]}>
+                    <ImageWrapper>
+                        <AboutImage src={image} alt="Susan & Ruth, Sweeney Barbers" />
+                    </ImageWrapper>
+                </ImageBox>}
+
                 {/* <p>We cater for all ages and styles and no hair style is too challenging for us.</p>
                 <p>With nearly 50 years combined experience, you are in safe hands with Sandra and Ruth - we have the experience and know-how to transform your image and have you looking ship shape in no time.</p>
                 <p>Our friendly and open atmosphere means we can cater for all of your needs - autistic & special needs friendly. We also provide specialist hair care services for people with hairloss and hair maintenence needs.</p> */}
@@ -49,7 +55,7 @@ const About = (props) =>  {
                 
             </Box>
 
-            {image !== null && <ImageBox width={[1, 1/2]} px={[3, 4]}>
+            {image !== null && <ImageBox mobile={false} width={[1, 1/2]} px={[3, 4]}>
                 <ImageWrapper>
                     <AboutImage src={image} alt="Susan & Ruth, Sweeney Barbers" />
                 </ImageWrapper>
@@ -73,8 +79,14 @@ const aboutData = graphql`
 `
 
 const ImageBox = styled(Box)`
+    display: ${props => props.mobile ? 'block' : 'none'};
+
     @media only screen and (max-width: 767px) {
         transform: scale(0.7);
+    }
+
+    @media only screen and (min-width: 768px) {
+        display: ${props => !props.mobile ? 'block' : 'none'}
     }
 `
 
