@@ -92,6 +92,11 @@ const Title = styled.h2`
 
 const TextBox = styled(Box)`
     text-align: left;
+    max-width: 300px;
+
+    @media only screen and (min-width: 414px) {
+        max-width: 375px;
+    }
 `
 
 const Text = styled.p`

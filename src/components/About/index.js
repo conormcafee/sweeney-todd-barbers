@@ -46,7 +46,7 @@ const About = (props) =>  {
 
                 <Flex flexWrap="wrap">
                     {ICONS.map((item, index) => (
-                        <Flex flexDirection="column" alignItems="flex-start" width={1/2} mt={4} key={index} >
+                        <Flex flexDirection="column" alignItems={["center", "flex-start"]} width={1/2} mt={4} key={index} >
                             <img src={item.img} alt={`Sweeney Todd's ${item.alt}`} />
                             <IconTitle>{item.title}</IconTitle>
                         </Flex>
@@ -81,22 +81,22 @@ const aboutData = graphql`
 const ImageBox = styled(Box)`
     display: ${props => props.mobile ? 'block' : 'none'};
 
-    @media only screen and (max-width: 767px) {
+    @media only screen and (max-width: 599px) {
         transform: scale(0.7);
     }
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 600px) {
         display: ${props => !props.mobile ? 'block' : 'none'}
     }
 `
 
 const ImageWrapper = styled.div`
-	background: rgba(250, 182, 69, 0.3);
+	background: rgba(255, 181, 0, 0.6);
 	padding: 32px;
 	border-radius: 20px;
 	transform: translate(0px, 0) rotate(45deg);
 
-    @media only screen and (min-width: 768px) {
+    @media only screen and (min-width: 600px) {
         transform: translate(75px, 0) rotate(45deg);
     }
 `
@@ -113,6 +113,13 @@ const AboutImage = styled.img`
 
 const IconTitle = styled.span`
     margin-top: 10px;
+    text-align: center;
+    font-size: 13px;
+
+    @media only screen and (min-width: 600px) {
+        text-align: left;
+        font-size: 16px;
+    }
 `
 
 const ICONS = [
